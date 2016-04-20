@@ -24,7 +24,7 @@ angular.module('myApp.view1', ['ngRoute'])
   };
 
   $scope.redirectInstagram = function(){
-    $window.location.href = 'https://api.instagram.com/oauth/authorize/?client_id=ArteAndMidiaNazareno&redirect_uri=http://localhost:8000/app/index.html#/view1&response_type=token';
+    $window.location.href = 'https://api.instagram.com/oauth/authorize/?client_id=4ffeb7f0f089438887d9413010d67708&redirect_uri=http://localhost:8000/app/index.html#/view1&response_type=token';
   }
 
   $scope.randomize = function() {
