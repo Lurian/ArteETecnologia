@@ -1,5 +1,5 @@
 <div ng-controller="View1Ctrl">
-  <div style="height: 305px">
+  <div style="height: 305px" data-ng-init="getAccessToken()">
     <uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
       <uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
         <img ng-src="{{slide.image}}" style="margin:auto;">
@@ -12,7 +12,7 @@
   </div>
   <div class="row">
     <div class="col-md-6">
-      <button type="button" class="btn btn-info" ng-click="addSlide()">Add Slide</button>
+      <button type="button" class="btn btn-info" ng-click="showUrl()"> URL console</button>
       <button type="button" class="btn btn-info" ng-click="redirectInstagram()"> Instagram</button>
       <div class="checkbox">
         <label>

@@ -8,6 +8,5 @@ angular.module('myApp', [
   'myApp.version',
   'ui.bootstrap'
 ]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
+config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 }]);
