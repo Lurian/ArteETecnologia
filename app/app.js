@@ -6,7 +6,9 @@ angular.module('myApp', [
   'myApp.view1',
   'myApp.view2',
   'myApp.version',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ja.qr',
+  'ngAnimate'
 ]).
 config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 }]);

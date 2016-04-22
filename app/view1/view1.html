@@ -1,29 +1,59 @@
-<div ng-controller="View1Ctrl">
-  <div style="height: 305px" data-ng-init="getAccessToken()">
-    <uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
-      <uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-        <img ng-src="{{slide.image}}" style="margin:auto;">
-        <div class="carousel-caption">
-          <h4>Slide {{slide.id}}</h4>
-          <p>{{slide.text}}</p>
+<div data-ng-controller="View1Ctrl">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand">Arte e Tecnologia - UFCG</a>
         </div>
-      </uib-slide>
-    </uib-carousel>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <button type="button" class="btn btn-info" ng-click="showUrl()"> URL console</button>
-      <button type="button" class="btn btn-info" ng-click="redirectInstagram()"> Instagram</button>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" ng-model="noWrapSlides">
-          Disable Slide Looping
-        </label>
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container" data-ng-init="isCollapsed = true">
+        <h1> Nome do Projeto </h1>
+        <p> Quantas coisas meio que inúteis você já encontrou por ai? Aquelas portas que saem para o vazio. Escadas ou rampas que não lhe levam a canto algum. Coisas realmente sem sentido. Esse projeto ta aqui para permitir que você dê sentido ao sem sentido. </p>
+
+        <button type="button" class="btn btn-primary" ng-click="isCollapsed = !isCollapsed">Saber Mais</button>
+        <hr>
+        <div uib-collapse="isCollapsed">
+        <div class="well well-lg">
+          <h4> Nossa Proposta </h4>
+          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+          <h4> Instagram </h4>
+          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+        </div>
+    </div>
       </div>
     </div>
-    <div class="col-md-6">
-      Interval, in milliseconds: <input type="number" class="form-control" ng-model="myInterval">
-      <br />Enter a negative number or 0 to stop the interval.
-    </div>
-  </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Escolha um Link</h2>
+          <input data-ng-model="stringqr" class="form-control" data-ng-change="isImage()">
+        </div>
+        <div class="col-md-4">
+          <h2>Confira a imagem</h2>
+          <img data-ng-show="showImage" src="{{stringqr}}" height="320" width="320">
+       </div>
+        <div class="col-md-4">
+          <h2>QR Code</h2>
+          <qr data-ng-if="showQR" text="stringqr"></qr>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p> Nome do Projeto - Universidade Federal de Campina Grande </p>
+      </footer>
+    </div> <!-- /container -->
 </div>

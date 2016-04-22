@@ -6,10 +6,15 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "angular": "~1.4.0",
-    "angular-route": "~1.4.0",
-    "angular-loader": "~1.4.0",
-    "angular-mocks": "~1.4.0",
+    "angular": "latest",
+    "angular-route": "latest",
+    "angular-qr": "latest",
+    "angular-loader": "latest",
+    "angular-mocks": "latest",
+    "angular-animate" : "latest",
     "html5-boilerplate": "~5.2.0"
+  },
+  "resolutions": {
+    "angular": "~1.4.0"
   }
 }
