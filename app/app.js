@@ -10,4 +10,7 @@ angular.module('myApp', [
   'ngAnimate'
 ]).
 config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+    $routeProvider.otherwise({
+        redirectTo: '/app'
+    });
 }]);
